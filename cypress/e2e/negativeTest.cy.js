@@ -190,7 +190,7 @@ describe('Sabi Web Application', () => {
     
         cy.get('.swal2-confirm').click() //click on approve
     
-        cy.get('#swal2-content').should('have.text', 'Successfully  Approveed') //confimr the item was approved
+        cy.get('#swal2-content').should('have.text', 'Successfully  Approveed') //confirm the item was not approved
     
         cy.get('.swal2-confirm')
     
