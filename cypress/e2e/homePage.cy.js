@@ -10,7 +10,7 @@ describe('Sabi Web Application', () => {
     cy.get('.login-btn').click()
   })
 
-  it.skip('Create Manufacturer', () => {
+  it('Create Manufacturer', () => {
     cy.get('.side-nav-toggle.pointer.color-white.ng-tns-c93-0').click() //Click Hamburger Menu 
 
     cy.get(':nth-child(8) > .pointer > .icon-holder').click() //Product Menu 
@@ -33,7 +33,7 @@ describe('Sabi Web Application', () => {
   })
 
 
-  it.skip('Create Brand', () => {
+  it('Create Brand', () => {
     cy.get('.side-nav-toggle.pointer.color-white.ng-tns-c93-0').click() //Click Hamburger Menu 
 
     cy.get(':nth-child(8) > .pointer > .icon-holder').click() //Product Menu 
@@ -47,7 +47,7 @@ describe('Sabi Web Application', () => {
 
     cy.get('.ng-arrow-wrapper').then(($el) => { //Select the manufacturer
       cy.wrap($el).click()
-      cy.contains('Nike').click()
+      cy.contains(data.staging.manu_name).click()
     })
 
     cy.get('.row > :nth-child(3) > .form-control').type(data.staging.brand_desc) //Enter brand description 
@@ -61,7 +61,7 @@ describe('Sabi Web Application', () => {
 
   })
 
-  it.skip('Create Product', () => {
+  it('Create Product', () => {
     cy.get('.side-nav-toggle.pointer.color-white.ng-tns-c93-0').click() //Click Hamburger Menu 
 
     cy.get(':nth-child(8) > .pointer > .icon-holder').click() //Product Menu 
@@ -75,22 +75,22 @@ describe('Sabi Web Application', () => {
 
     cy.get('ng-select[placeholder=\'Select Brands\'] span[class=\'ng-arrow-wrapper\']').then(($el) => { //select brand
       cy.wrap($el).click()
-      cy.contains('Air Jordan').click()
+      cy.contains(data.staging.brand_name).click()
     })
 
     cy.get(':nth-child(3) > .col-md-12 > .ng-select > .ng-select-container > .ng-arrow-wrapper').then(($el) => { //select manufactrer
       cy.wrap($el).click()
-      cy.contains('Nike').click()
+      cy.contains(data.staging.manu_name).click()
     })
 
     cy.get(':nth-child(4) > .col-md-12 > .ng-select > .ng-select-container > .ng-arrow-wrapper').then(($el) => { //Select category
       cy.wrap($el).click()
-      cy.contains('NIke shoes').click()
+      cy.contains(data.staging.category).click()
     })
 
     cy.get(':nth-child(5) > .col-md-12 > .ng-select > .ng-select-container > .ng-arrow-wrapper').then(($el) => { //Select sub category
       cy.wrap($el).click()
-      cy.contains('BLACK').click()
+      cy.contains(data.staging.sub_category).click()
     })
 
     cy.get(':nth-child(6) > .col-md-12 > .form-control').type(data.staging.product_desc) //Enter product description 
@@ -103,7 +103,7 @@ describe('Sabi Web Application', () => {
 
   })
 
-  it('Approve product', () => {
+  it.only('Approve product', () => {
     cy.get('.side-nav-toggle.pointer.color-white.ng-tns-c93-0').click() //Click Hamburger Menu 
 
     cy.get(':nth-child(8) > .pointer > .icon-holder').click() //Product Menu 
@@ -114,7 +114,7 @@ describe('Sabi Web Application', () => {
     cy.get("a[class='btn btn-sm btn-default'] span").click() //Click awaiting approval button 
     cy.wait(3000)
 
-    cy.get("body > app-root:nth-child(4) > app-shell:nth-child(2) > div:nth-child(1) > div:nth-child(1) > div:nth-child(2) > div:nth-child(4) > app-product-catalogue:nth-child(2) > div:nth-child(1) > div:nth-child(1) > div:nth-child(4) > app-awaiting-approval:nth-child(1) > div:nth-child(1) > div:nth-child(2) > div:nth-child(2) > table:nth-child(1) > tbody:nth-child(2) > tr:nth-child(1) > td:nth-child(4) > div:nth-child(1) > li:nth-child(1) > a:nth-child(1) > i:nth-child(1)").click() //click on the action button for the product ifeanyi
+    cy.get(':nth-child(1) > :nth-child(4) > .mrg-top-10 > .user-profile > .dropdown-toggle > .fa').click() //click on the action button for the product
 
     cy.get(':nth-child(1) > :nth-child(4) > .mrg-top-10 > .user-profile > .dropdown-menu > :nth-child(1) > .ng-star-inserted > span').click() //Approve the product item
 

@@ -21,13 +21,14 @@ describe('Sabi Web Application', () => {
 
         cy.get('.btn > span').click() //click add button 
 
-        cy.get('form.ng-untouched > .row > :nth-child(1) > .form-control').type(data.staging.manu_name_e) //Enter existing Manufacturer name 
-        cy.get(':nth-child(2) > .form-control').type(data.staging.manu_address_e) //Enter Manufacturer address 
+        cy.get('form.ng-untouched > .row > :nth-child(1) > .form-control').type(data.staging.manu_name_exist) //Enter existing Manufacturer name 
+        
+        cy.get(':nth-child(2) > .form-control').type(data.staging.manu_address) //Enter Manufacturer address 
 
         cy.wait(3000)
         cy.get('form.ng-dirty > .btn').click();  //Click Create button 
 
-        cy.get('#swal2-content').should('have.text', 'Manufacturer with name Ndkkdddkd already exist.')//Confirm manufacturer is not created ifeanyi
+        cy.get('#swal2-content').should('have.text', 'Manufacturer with name Gucci already exist.')//Confirm manufacturer is not created ifeanyi
 
         cy.get('.swal2-confirm').click()
 
@@ -45,7 +46,7 @@ describe('Sabi Web Application', () => {
         cy.get('.btn > span').click() //click add button 
 
         cy.wait(3000)
-        cy.get('.ng-invalid.ng-dirty > .btn').should('be.disabled')  //Create button should be disabled ifeanyi
+        cy.get('form.ng-untouched > .btn').should('be.disabled')  //Create button should be disabled
 
     })
 
@@ -60,18 +61,18 @@ describe('Sabi Web Application', () => {
 
         cy.get('.btn').click() //Click add brand button 
 
-        cy.get('form.ng-untouched > .row > :nth-child(1) > .form-control').type(data.staging.brand_name_e) //Enter existing Brand name 
+        cy.get('form.ng-untouched > .row > :nth-child(1) > .form-control').type(data.staging.brand_name_exist) //Enter existing Brand name 
 
         cy.get('.ng-arrow-wrapper').then(($el) => { //select manufacturer
             cy.wrap($el).click()
-            cy.contains(data.staging.manu_s).click()
+            cy.contains(data.staging.manu_name_exist).click()
         })
 
         cy.get('.row > :nth-child(3) > .form-control').type(data.staging.brand_desc) //Enter brand description 
 
         cy.get('form.ng-touched > .btn').click() //Click create button 
 
-        cy.get('#swal2-content').should('have.text', 'Brand was succesfully created') //confirm brand was not created ifeanyi
+        cy.get('#swal2-content').should('have.text', 'Brand with name Gucci fashion already exists') //confirm brand was not created
 
         cy.get('.swal2-confirm').click()
 
@@ -88,7 +89,7 @@ describe('Sabi Web Application', () => {
 
         cy.get('.btn').click() //Click add brand button 
 
-        cy.get('form.ng-touched > .btn').should('be.disabled') //create button should be disabled ifeanyi
+        cy.get('form.ng-untouched > .btn').should('be.disabled') //create button should be disabled
 
     })
 
@@ -103,7 +104,7 @@ describe('Sabi Web Application', () => {
 
         cy.get('.page-title > .btn > span').click() //Click add product button 
 
-        cy.get(':nth-child(1) > .col-md-12 > .form-control').type(data.staging.product_name_e) //Enter Product name 
+        cy.get(':nth-child(1) > .col-md-12 > .form-control').type(data.staging.product_name_exist) //Enter Product name 
 
         cy.get('ng-select[placeholder=\'Select Brands\'] span[class=\'ng-arrow-wrapper\']').then(($el) => { //select brand
             cy.wrap($el).click()
@@ -122,14 +123,14 @@ describe('Sabi Web Application', () => {
 
         cy.get(':nth-child(5) > .col-md-12 > .ng-select > .ng-select-container > .ng-arrow-wrapper').then(($el) => { //Select sub category
             cy.wrap($el).click()
-            cy.contains(data.staging.sub_c).click()
+            cy.contains(data.staging.sub_category).click()
         })
 
         cy.get(':nth-child(6) > .col-md-12 > .form-control').type(data.staging.product_desc) //Enter product description 
 
         cy.get('.btn').click(); //Click create button 
 
-        cy.get('#swal2-content').should('have.text', 'Product Catelogue was succesfully created') //confimr product was not created ifeanyi
+        cy.get('#swal2-content').should('have.text', 'Product catalogue already exist!') //confimr product was not created
 
         cy.get('.swal2-confirm').click()
 
@@ -146,6 +147,7 @@ describe('Sabi Web Application', () => {
 
         cy.get('.page-title > .btn > span').click() //Click add product button 
 
+        cy.wait(3000)
         cy.get('ng-select[placeholder=\'Select Brands\'] span[class=\'ng-arrow-wrapper\']').then(($el) => { //select brand
             cy.wrap($el).click()
             cy.contains(data.staging.brand_s).click()
@@ -163,12 +165,12 @@ describe('Sabi Web Application', () => {
 
         cy.get(':nth-child(5) > .col-md-12 > .ng-select > .ng-select-container > .ng-arrow-wrapper').then(($el) => { //Select sub category
             cy.wrap($el).click()
-            cy.contains(data.staging.sub_c).click()
+            cy.contains(data.staging.sub_category).click()
         })
 
         cy.get(':nth-child(6) > .col-md-12 > .form-control').type(data.staging.product_desc) //Enter product description 
 
-        cy.get('.btn').should('be.disabled') //create button should be disabled ifeanyi 
+        cy.get('.btn').should('be.disabled') //create button should be disabled
 
     })
 
@@ -184,13 +186,13 @@ describe('Sabi Web Application', () => {
         cy.get("a[class='btn btn-sm btn-default'] span").click() //Click awaiting approval button 
         cy.wait(3000)
     
-        cy.get("body > app-root:nth-child(4) > app-shell:nth-child(2) > div:nth-child(1) > div:nth-child(1) > div:nth-child(2) > div:nth-child(4) > app-product-catalogue:nth-child(2) > div:nth-child(1) > div:nth-child(1) > div:nth-child(4) > app-awaiting-approval:nth-child(1) > div:nth-child(1) > div:nth-child(2) > div:nth-child(2) > table:nth-child(1) > tbody:nth-child(2) > tr:nth-child(1) > td:nth-child(4) > div:nth-child(1) > li:nth-child(1) > a:nth-child(1) > i:nth-child(1)").click() //click on the action button for the product ifeanyi
+        cy.get(':nth-child(1) > :nth-child(4) > .mrg-top-10 > .user-profile > .dropdown-toggle > .fa').click() //click on the action button for the product
     
         cy.get(':nth-child(1) > :nth-child(4) > .mrg-top-10 > .user-profile > .dropdown-menu > :nth-child(1) > .ng-star-inserted > span').click() //select approve
     
         cy.get('.swal2-confirm').click() //click on approve
     
-        cy.get('#swal2-content').should('have.text', 'Successfully  Approveed') //confirm the item was not approved
+        cy.get('#swal2-content').should('have.text', 'Approval was rejected because product with the same name already exist! ') //confirm the item was not approved
     
         cy.get('.swal2-confirm')
     

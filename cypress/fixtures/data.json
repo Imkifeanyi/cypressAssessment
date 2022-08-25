@@ -3,19 +3,19 @@
     "url": "https://dashboard-test.merchlist.co",
     "username": "bi@yopmail.com",
     "password": "Ren@1234567",
-    "manu_name": "Ndkkdddkd",
-    "manu_address": "dd333d",
-    "brand_name": "Air Jdddordan Pro",
-    "brand_desc": "Good Sneddakers",
-    "product_name": "Air Jordan Pro",
-    "product_desc": "Good Sneakers",
-    "manu_name_e": "Ndkkdddkd",
-    "brand_name_e": "Air Jdddordan Pro",
-    "product_name_e": "Air Jordan Pro",
-    "brand_s": "Air Jordan",
+    "manu_name": "Nike1",
+    "manu_address": "Singapore",
+    "brand_name": "Gucci fashion1",
+    "brand_desc": "fashion bag",
+    "product_name": "Gucci bag1",
+    "product_desc": "Stripes",
+    "manu_name_exist": "Gucci",
+    "brand_name_exist": "Gucci fashion",
+    "product_name_exist": "Gucci bag",
+    "brand_s": "Air Jorda",
     "manu_s": "Nike",
     "category": "NIke shoes",
-    "sub_c": "BLACK"
+    "sub_category": "BLACK"
 
   }
 
