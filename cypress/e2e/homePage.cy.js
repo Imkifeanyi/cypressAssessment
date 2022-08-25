@@ -103,7 +103,7 @@ describe('Sabi Web Application', () => {
 
   })
 
-  it.only('Approve product', () => {
+  it('Approve product', () => {
     cy.get('.side-nav-toggle.pointer.color-white.ng-tns-c93-0').click() //Click Hamburger Menu 
 
     cy.get(':nth-child(8) > .pointer > .icon-holder').click() //Product Menu 
