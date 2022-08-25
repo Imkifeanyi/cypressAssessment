@@ -1,0 +1,23 @@
+{
+  "staging": {
+    "url": "https://dashboard-test.merchlist.co",
+    "username": "bi@yopmail.com",
+    "password": "Ren@1234567",
+    "manu_name": "Ndkkdddkd",
+    "manu_address": "dd333d",
+    "brand_name": "Air Jdddordan Pro",
+    "brand_desc": "Good Sneddakers",
+    "product_name": "Air Jordan Pro",
+    "product_desc": "Good Sneakers",
+    "manu_name_e": "Ndkkdddkd",
+    "brand_name_e": "Air Jdddordan Pro",
+    "product_name_e": "Air Jordan Pro",
+    "brand_s": "Air Jordan",
+    "manu_s": "Nike",
+    "category": "NIke shoes",
+    "sub_c": "BLACK"
+
+  }
+
+}
+
