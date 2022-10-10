@@ -8,12 +8,15 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Imkifeanyi/Sabi.git"
+    "url": "git+https://github.com/Imkifeanyi/cypressAssessment.git"
   },
   "author": "Ifeanyi Iloezumma",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/Imkifeanyi/Sabi/issues"
+    "url": "https://github.com/Imkifeanyi/cypressAssessment.git"
   },
-  "homepage": "https://github.com/Imkifeanyi/Sabi#readme"
+  "homepage": "https://github.com/Imkifeanyi/cypressAssessment.git",
+  "devDependencies": {
+    "cypress": "^10.9.0"
+  }
 }
