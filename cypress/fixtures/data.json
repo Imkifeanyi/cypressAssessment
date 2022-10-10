@@ -17,6 +17,17 @@
     "category": "NIke shoes",
     "sub_category": "BLACK"
 
+  },
+
+  "OrangeHRM": {
+    "employeeFirstName": "Lincoln",
+    "employeeMiddleName": "Kegle",
+    "employeeLastName": "Paulo",
+    "employeeID": "1236",
+    "username": "Lincoln",
+    "password": "Ren@1234567",
+    "AdminUsername":"LincolnAsddo"
+
   }
 
 }

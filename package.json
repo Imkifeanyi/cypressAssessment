@@ -18,5 +18,8 @@
   "homepage": "https://github.com/Imkifeanyi/cypressAssessment.git",
   "devDependencies": {
     "cypress": "^10.9.0"
+  },
+  "dependencies": {
+    "cypress-file-upload": "^5.0.8"
   }
 }
